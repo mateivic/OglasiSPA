@@ -5,7 +5,7 @@ import App from "./App.vue";
 import router from "./router";
 
 const CreateAd = defineAsyncComponent(() =>
-    import("./components/CreateAd.vue")
+  import("./components/CreateAd.vue")
 );
 
 const app = createApp(App);

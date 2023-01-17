@@ -7,7 +7,9 @@
       <button v-if="!showFav" @click="toggleShowFav" class="fav-botton">
         Favoriti
       </button>
-      <button v-else @click="toggleShowFav" class="fav-botton">Svi oglasi</button>
+      <button v-else @click="toggleShowFav" class="fav-botton">
+        Svi oglasi
+      </button>
     </div>
   </div>
   <div class="container" v-if="showFav">
@@ -21,7 +23,11 @@
     </div>
   </div>
   <div v-if="creatingNew">
-    <CreateAd :creatingNew="creatingNew" @closing-form="toggleCreateForm" @new-ad="createNewAd"></CreateAd>
+    <CreateAd
+      :creatingNew="creatingNew"
+      @closing-form="toggleCreateForm"
+      @new-ad="createNewAd"
+    ></CreateAd>
   </div>
 </template>
 
@@ -52,7 +58,7 @@ export default {
       this.showFav = !this.showFav;
     },
     deleteAd() {
-      console.log("Ad successfully deleted")
+      console.log("Ad successfully deleted");
     },
     toggleCreateForm() {
       this.creatingNew = !this.creatingNew;
@@ -61,7 +67,7 @@ export default {
       console.log("Created new ad " + args.newAd);
       this.insertAd(args.newAd);
       this.creatingNew = false;
-    }
+    },
   },
 };
 </script>

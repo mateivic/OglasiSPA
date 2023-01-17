@@ -61,7 +61,9 @@ export const useAdStore = defineStore("adStore", {
   }),
   getters: {
     allAds: (state) => state.ads,
-    getAdById: (state) => { return (id) => state.ads.find((ad) => ad.id === id); }
+    getAdById: (state) => {
+      return (id) => state.ads.find((ad) => ad.id === id);
+    },
   },
   actions: {
     deleteAd(id) {
@@ -72,6 +74,6 @@ export const useAdStore = defineStore("adStore", {
     },
     insertAd(ad) {
       this.ads.push(ad);
-    }
+    },
   },
 });
